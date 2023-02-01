@@ -42,7 +42,11 @@
         this.keepTime = false;
         this.difference = 0;
         Date = OriginalDate;
-        Date.prototype = OriginalDate.prototype;
+        try {
+          Date.prototype = OriginalDate.prototype;
+        } catch(e) {
+          /* empty */
+        }
       },
 
       _apply: function() {
@@ -79,8 +83,11 @@
 
           return date;
         };
-
-        Date.prototype = OriginalDate.prototype;
+        try {
+          Date.prototype = OriginalDate.prototype;
+        } catch (e) {
+          /* empty */
+        }
         Date.now = function() {
           var timestamp = self.keepTime ? OriginalDate.now() : self.timestamp;
           return timestamp + self._getDifference();
