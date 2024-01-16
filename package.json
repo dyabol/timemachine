@@ -47,5 +47,6 @@
     "karma-phantomjs-launcher": "~1.0.4",
     "load-grunt-tasks": "~3.5.2",
     "phantomjs": "~2.1.7"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
